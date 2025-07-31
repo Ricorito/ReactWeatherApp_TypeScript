@@ -25,7 +25,6 @@ const Forecast = ({ data }: Props): JSX.Element => {
 
   return (
     <div>
-
       <div
         className="w-full min-h-[800px] md:max-w-[500px] py-4 md:py-4
     md:px-10 lg:px-24 h-full lg:h-auto bg-white bg-opacity-20
@@ -52,27 +51,31 @@ const Forecast = ({ data }: Props): JSX.Element => {
           </section>
 
           <section className="flex overflow-x-scroll mt-4 pb-2 mb-5">
-            {data.list.map((item, i) => (
-              <div
-                className="inline-block text-center w-[50px] flex-shrink-0"
-                key={i}>
-                <p className="text-sm">
-                  {i === 0
-                    ? t("now")
-                    : `${new Date(item.dt * 750)
-                        .getHours()
-                        .toString()
-                        .padStart(2, "0")}:00`}
-                </p>
-                <img
-                  alt={`weather-icon-${item.weather[0].description}`}
-                  src={`https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
-                />
-                <p className="text-sm font-bold">
-                  <Degree temp={Math.round(item.main.temp)} />
-                </p>
-              </div>
-            ))}
+            {data.list.map((item, i) => {
+              const localTimeInMilliseconds = (item.dt + data.timezone) * 1000;
+              const date = new Date(localTimeInMilliseconds);
+
+              const hours = date.getUTCHours();
+
+              return (
+                <div
+                  className="inline-block text-center w-[50px] flex-shrink-0"
+                  key={i}>
+                  <p className="text-sm">
+                    {i === 0
+                      ? t("now")
+                      : `${hours.toString().padStart(2, "0")}:00`}
+                  </p>
+                  <img
+                    alt={`weather-icon-${item.weather[0].description}`}
+                    src={`https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
+                  />
+                  <p className="text-sm font-bold">
+                    <Degree temp={Math.round(item.main.temp)} />
+                  </p>
+                </div>
+              );
+            })}
           </section>
 
           <section className="flex flex-wrap justify-between text-zinc-700">
