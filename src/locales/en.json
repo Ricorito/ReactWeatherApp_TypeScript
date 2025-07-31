@@ -1,0 +1,24 @@
+{
+  "title": "Weather",
+  "subtitle": "ForecastAPP",
+  "description": "Enter below a place you want to know the weather of and select an option from the dropdown",
+  "searchPlaceholder": "Enter location",
+  "searchButton": "Search",
+   "now": "Now",
+  "sunrise": "Sunrise",
+  "sunset": "Sunset",
+  "wind": "Wind",
+  "gusts": "gusts",
+  "feelsLike": "Feels like",
+  "feelsColder": "Feels colder",
+  "feelsWarmer": "Feels warmer",
+  "humidity": "Humidity",
+  "precipitation": "Precipitation",
+  "cloudsAt": "clouds at",
+  "pressure": "Pressure",
+  "lowerThanStandard": "Lower than standard",
+  "higherThanStandard": "Higher than standard",
+  "visibility": "Visibility",
+  "allRightsReserved": "All rights reserved"
+
+}

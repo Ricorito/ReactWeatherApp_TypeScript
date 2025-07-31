@@ -29,7 +29,9 @@ const Tile = ({ icon, title, info, description }: Props): JSX.Element => {
       <div className="flex items-center text-sm font-bold">
         <Icon /> <h4 className="ml-1">{title}</h4>
       </div>
-      <h3 className="mt-2 text-xl text-white font-mono text-bold text-center">{info}</h3>
+      <h3 className="mt-2 text-xl text-white font-mono text-bold text-center">
+        {info}
+      </h3>
       <p className="text-xs font-bold "> {description}</p>
     </article>
   );

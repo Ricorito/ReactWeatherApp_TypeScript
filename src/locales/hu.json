@@ -1,0 +1,25 @@
+{
+  "title": "Időjárás",
+  "subtitle": "ElőrejelzőAPP",
+  "description": "Írd be alább, melyik hely időjárására vagy kíváncsi, és válassz egy lehetőséget a legördülő menüből",
+"searchPlaceholder": "Írd be a helyet",
+  "searchButton": "Keresés",
+    "now": "Most",
+  "sunrise": "Napkelte",
+  "sunset": "Napnyugta",
+  "wind": "Szél",
+  "gusts": "lökések",
+  "feelsLike": "Hőérzet",
+  "feelsColder": "Hidegebbnek érződik",
+  "feelsWarmer": "Melegebbnek érződik",
+  "humidity": "Páratartalom",
+  "precipitation": "Csapadék",
+  "cloudsAt": "felhőzet",
+  "pressure": "Légnyomás",
+  "lowerThanStandard": "Alacsonyabb az átlagnál",
+  "higherThanStandard": "Magasabb az átlagnál",
+  "visibility": "Láthatóság",
+  "allRightsReserved": "Minden jog fenntartva"
+
+
+}

@@ -1,4 +1,7 @@
+import { useLanguage } from "../context/LanguageContext";
+
 const Footer = () => {
+    const { t } = useLanguage();
   const getCurrentDate = () => {
     return new Date().getFullYear();
   };
@@ -7,7 +10,7 @@ const Footer = () => {
     <footer className="w-full py-6 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
         <div className="text-sm text-gray-600 dark:text-white mb-4 md:mb-0 md:flex-1 text-center">
-          © All rights reserved {getCurrentDate()} • Martin Germán
+          © {t("allRightsReserved")} {getCurrentDate()} • Martin Germán{" "}
         </div>
         <div>
           <a
