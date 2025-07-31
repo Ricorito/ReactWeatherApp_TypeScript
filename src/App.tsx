@@ -13,7 +13,7 @@ const App = () => {
   
   return (
     <LanguageProvider>
-      <div className="flex flex-col min-h-screen bg-gradient-to-br from-orange-500  to-sky-400">
+      <div className="flex overflow-hidden flex-col min-h-screen bg-gradient-to-br from-orange-500  to-sky-400">
         <div className="p-4 flex justify-end">
           <LanguageSelector />
         </div>

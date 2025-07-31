@@ -22,7 +22,6 @@ const Degree = ({ temp }: { temp: number }): JSX.Element => (
 const Forecast = ({ data }: Props): JSX.Element => {
   const { t } = useLanguage();
   const today = data.list[0];
-
   return (
     <div
       className="w-full min-h-[800px] md:max-w-[500px] py-4 md:py-4
@@ -52,11 +51,15 @@ const Forecast = ({ data }: Props): JSX.Element => {
         <section className="flex overflow-x-scroll mt-4 pb-2 mb-5">
           {data.list.map((item, i) => (
             <div
-              className="inline-block text-center w-[50px]
-            flex-shrink-0"
+              className="inline-block text-center w-[50px] flex-shrink-0"
               key={i}>
               <p className="text-sm">
-                {i === 0 ? t("now") : new Date(item.dt * 1000).getHours()}
+                {i === 0
+                  ? t("now")
+                  : `${new Date((item.dt + data.timezone) * 650)
+                      .getHours()
+                      .toString()
+                      .padStart(2, "0")}:00`}
               </p>
               <img
                 alt={`weather-icon-${item.weather[0].description}`}
