@@ -4,9 +4,10 @@ import Humidity from "./Icons/Humidity";
 import Visibility from "./Icons/Visibility";
 import Pressure from "./Icons/Pressure";
 import Pop from "./Icons/Pop";
+import Uvi from "./Icons/Uvi";
 
 type Props = {
-  icon: "wind" | "feels" | "humidity" | "visibility" | "pressure" | "pop";
+  icon: "wind" | "feels" | "humidity" | "visibility" | "pressure" | "pop" | "uvi";
   title: string;
   info: string | JSX.Element;
   description: string;
@@ -18,6 +19,7 @@ const icons = {
   visibility: Visibility,
   pressure: Pressure,
   pop: Pop,
+  uvi: Uvi,
 };
 const Tile = ({ icon, title, info, description }: Props): JSX.Element => {
   const Icon = icons[icon];

@@ -1,12 +1,11 @@
 import { useState, useEffect, ChangeEvent } from "react";
-import { optionType,forecastType } from "../types";
+import { optionType, forecastType } from "../types";
 
 const useForecast = () => {
   const [term, setTerm] = useState<string>("");
   const [city, setCity] = useState<optionType | null>(null);
   const [options, setOptions] = useState<[]>([]);
   const [forecast, setForcast] = useState<forecastType | null>(null);
-  
 
   const getSearchOptions = (value: string) => {
     fetch(
@@ -28,18 +27,27 @@ const useForecast = () => {
     getSearchOptions(value);
   };
 
-  const getForecast = (city: optionType) => {
-    fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?lat=${city.lat}&lon=${city.lon}&units=metric&appid=${process.env.REACT_APP_API_KEY}`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        const forecastData = {
-          ...data.city,
-          list: data.list.slice(0, 16),
-        }
-        setForcast(forecastData)
-      }).catch(e => console.log(e));
+  const getForecast = async (city: optionType) => {
+    try {
+      const forecastRes = await fetch(
+        `https://api.openweathermap.org/data/2.5/forecast?lat=${city.lat}&lon=${city.lon}&units=metric&appid=${process.env.REACT_APP_API_KEY}`
+      );
+      const forecastData = await forecastRes.json();
+
+      const uviRes = await fetch(
+        `https://api.openweathermap.org/data/2.5/uvi?lat=${city.lat}&lon=${city.lon}&appid=${process.env.REACT_APP_API_KEY}`
+      );
+      const uviData = await uviRes.json();
+
+      const combinedData = {
+        ...forecastData.city,
+        list: forecastData.list.slice(0, 16),
+        uvi: uviData.value, 
+      };
+
+      setForcast(combinedData);
+    } catch (e) {
+    }
   };
 
   const onSubmit = () => {
@@ -47,6 +55,7 @@ const useForecast = () => {
 
     getForecast(city);
   };
+
   const onOptionSelect = (option: optionType) => {
     setCity(option);
   };
@@ -57,7 +66,7 @@ const useForecast = () => {
       setOptions([]);
     }
   }, [city]);
-  
+
   return {
     forecast,
     options,
@@ -65,7 +74,7 @@ const useForecast = () => {
     onOptionSelect,
     onSubmit,
     onInputChange,
-  }
-}
+  };
+};
 
 export default useForecast;

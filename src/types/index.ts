@@ -11,6 +11,7 @@ export type forecastType = {
   sunrise: number;
   sunset: number;
   timezone: number;
+  uvi: number;
   list: [
     {
       dt: number;

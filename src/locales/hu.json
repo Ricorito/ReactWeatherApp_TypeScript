@@ -19,7 +19,13 @@
   "lowerThanStandard": "Alacsonyabb az átlagnál",
   "higherThanStandard": "Magasabb az átlagnál",
   "visibility": "Láthatóság",
-  "allRightsReserved": "Minden jog fenntartva"
+  "allRightsReserved": "Minden jog fenntartva",
+  "uvi": "UV Sugárzás",
+  "uviLow": "Alacsony",
+  "uviModerate": "Közepes",
+  "uviHigh": "Magas",
+  "uviVeryHigh": "Nagyon magas",
+  "uviExtreme": "Extrém magas"
 
 
 }

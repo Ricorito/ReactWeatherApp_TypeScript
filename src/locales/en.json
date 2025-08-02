@@ -19,6 +19,11 @@
   "lowerThanStandard": "Lower than standard",
   "higherThanStandard": "Higher than standard",
   "visibility": "Visibility",
-  "allRightsReserved": "All rights reserved"
-
+  "allRightsReserved": "All rights reserved",
+  "uvi": "UV Index",
+  "uviLow": "Low",
+  "uviModerate": "Moderate",
+  "uviHigh": "High",
+  "uviVeryHigh": "Very High",
+  "uviExtreme": "Extreme"
 }

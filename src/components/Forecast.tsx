@@ -138,13 +138,19 @@ const Forecast = ({ data }: Props): JSX.Element => {
             />
 
             <Tile
-              icon="pressure"
-              title={t("pressure")}
-              info={`${today.main.pressure} hPa`}
+              icon="uvi"
+              title={t("uvi")}
+              info={`${data.uvi.toFixed(1)}`}
               description={
-                Math.round(today.main.pressure) < 1030
-                  ? t("lowerThanStandard")
-                  : t("higherThanStandard")
+                data.uvi < 3
+                  ? t("uviLow")
+                  : data.uvi < 6
+                  ? t("uviModerate")
+                  : data.uvi < 8
+                  ? t("uviHigh")
+                  : data.uvi < 11
+                  ? t("uviVeryHigh")
+                  : t("uviExtreme")
               }
             />
 
