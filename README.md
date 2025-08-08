@@ -5,9 +5,9 @@
 - OpenWeatherAPI
 
 ## Install 
-git clone
-npm i or npm install
-npm run dev
+- git clone
+- npm i or npm install
+- npm run dev
 ---
 
 ## Warning
