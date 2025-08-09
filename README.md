@@ -11,7 +11,8 @@
 ---
 
 ## Warning
-You have to create your own API key and make a .env file, or just replace the dotenv link with your API key.
+
+<br/>You have to create your own API key and make a .env file, or just replace the dotenv link with your API key.
 https://openweathermap.org/api
 ---
 
