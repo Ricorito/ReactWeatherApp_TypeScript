@@ -140,7 +140,7 @@ const Forecast = ({ data }: Props): JSX.Element => {
             <Tile
               icon="uvi"
               title={t("uvi")}
-              info={`${data.uvi.toFixed(1)}`}
+              info={`${data.uvi}`}
               description={
                 data.uvi < 3
                   ? t("uviLow")

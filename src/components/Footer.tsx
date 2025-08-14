@@ -14,7 +14,7 @@ const Footer = () => {
         </div>
         <div>
           <a
-            href="https://github.com/Ricorito"
+            href="https://github.com/martin-german"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
